@@ -1,4 +1,4 @@
-using CalendarServer.Data;
+using CalendarServer.DB;
 using CalendarServer.Model.Entity;
 using FastEndpoints;
 using Microsoft.AspNetCore.Authorization.Infrastructure;
@@ -15,7 +15,6 @@ dbContext.Add(new Event
 {
     Name = "Event One",
     Description = "First Event",
-    ID = new Guid(),
     Interval = new DateTimeRange(DateTime.UtcNow, DateTime.UtcNow.Add(TimeSpan.FromHours(1)))
 });
 
@@ -23,7 +22,6 @@ dbContext.Add(new Event
 {
     Name = "Event Two",
     Description = "Second Event",
-    ID = new Guid(),
     Interval = new DateTimeRange(DateTime.UtcNow.Add(TimeSpan.FromHours(2)), DateTime.UtcNow.Add(TimeSpan.FromHours(3)))
 });
 
@@ -31,7 +29,7 @@ dbContext.SaveChanges();
 
 foreach (var evt in dbContext.Events)
 {
-    Console.WriteLine(evt.ToString());
+    Console.WriteLine($"Event {evt.Name} has ID {evt.ID}");
 }
 
 
