@@ -2,7 +2,6 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CalendarServer.Model.Entity;
 
-[Table("events")]
 public class Event
 {
     public Guid ID {get; set;}
