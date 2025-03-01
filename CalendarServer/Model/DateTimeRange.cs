@@ -1,3 +1,5 @@
+using Microsoft.Extensions.Logging;
+
 namespace CalendarServer.Model;
 
 public class DateTimeRange {
