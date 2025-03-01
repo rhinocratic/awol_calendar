@@ -1,5 +1,8 @@
-namespace CalendarServer.Model;
+using System.ComponentModel.DataAnnotations.Schema;
 
+namespace CalendarServer.Model.Entity;
+
+[Table("events")]
 public class Event
 {
     public required Guid ID {get; set;}

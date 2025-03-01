@@ -1,5 +1,5 @@
 using CalendarServer.Data;
-using CalendarServer.Model;
+using CalendarServer.Model.Entity;
 using FastEndpoints;
 using Microsoft.AspNetCore.Authorization.Infrastructure;
 using Microsoft.Data.Sqlite;
@@ -31,7 +31,7 @@ dbContext.SaveChanges();
 
 foreach (var evt in dbContext.Events)
 {
-    Console.WriteLine(evt.Description);
+    Console.WriteLine(evt.ToString());
 }
 
 

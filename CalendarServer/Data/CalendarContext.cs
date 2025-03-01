@@ -1,4 +1,4 @@
-using CalendarServer.Model;
+using CalendarServer.Model.Entity;
 using Microsoft.EntityFrameworkCore;
 
 namespace CalendarServer.Data;

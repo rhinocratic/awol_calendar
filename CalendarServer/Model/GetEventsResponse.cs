@@ -1,3 +1,4 @@
+using CalendarServer.Model.Entity;
 
 namespace CalendarServer.Model;
 
