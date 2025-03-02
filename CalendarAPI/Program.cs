@@ -1,9 +1,11 @@
 using CalendarAPI.DB;
 using CalendarAPI.Model.Entity;
 using FastEndpoints;
+using FastEndpoints.Swagger;
 using Microsoft.AspNetCore.Authorization.Infrastructure;
 using Microsoft.Data.Sqlite;
 using Microsoft.VisualBasic;
+using Scalar.AspNetCore;
 
 using var keepAliveConnection = new SqliteConnection(CalendarContext.ConnectionString);
 keepAliveConnection.Open();
@@ -32,11 +34,18 @@ foreach (var evt in dbContext.Events)
     Console.WriteLine($"Event {evt.Name} has ID {evt.ID}");
 }
 
-
-
 var bld = WebApplication.CreateBuilder();
-bld.Services.AddFastEndpoints();
+bld.Services
+    .AddFastEndpoints()
+    .SwaggerDocument();
 
 var app = bld.Build();
 app.UseFastEndpoints();
+
+if (app.Environment.IsDevelopment())
+{
+    app.UseOpenApi(c => c.Path = "/openapi/{documentName}.json");
+    app.MapScalarApiReference();
+}
+
 app.Run();
