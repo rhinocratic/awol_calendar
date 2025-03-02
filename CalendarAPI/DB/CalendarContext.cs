@@ -1,7 +1,7 @@
-using CalendarServer.Model.Entity;
+using CalendarAPI.Model.Entity;
 using Microsoft.EntityFrameworkCore;
 
-namespace CalendarServer.DB;
+namespace CalendarAPI.DB;
 
 public class CalendarContext : DbContext{
 

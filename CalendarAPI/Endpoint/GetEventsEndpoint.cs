@@ -1,7 +1,7 @@
 using FastEndpoints;
-using CalendarServer.Model;
+using CalendarAPI.Model;
 
-namespace CalendarServer.Endpoint;
+namespace CalendarAPI.Endpoint;
 
 public class GetEventsEndpoint : Endpoint<GetEventsRequest, GetEventsResponse>
 {

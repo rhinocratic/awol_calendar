@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace CalendarServer.Model.Entity;
+namespace CalendarAPI.Model.Entity;
 
 public class Event
 {

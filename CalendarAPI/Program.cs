@@ -1,5 +1,5 @@
-using CalendarServer.DB;
-using CalendarServer.Model.Entity;
+using CalendarAPI.DB;
+using CalendarAPI.Model.Entity;
 using FastEndpoints;
 using Microsoft.AspNetCore.Authorization.Infrastructure;
 using Microsoft.Data.Sqlite;
@@ -40,4 +40,3 @@ bld.Services.AddFastEndpoints();
 var app = bld.Build();
 app.UseFastEndpoints();
 app.Run();
-

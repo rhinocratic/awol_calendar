@@ -1,6 +1,6 @@
-using CalendarServer.Model.Entity;
+using CalendarAPI.Model.Entity;
 
-namespace CalendarServer.Model;
+namespace CalendarAPI.Model;
 
 public class GetEventsResponse
 {

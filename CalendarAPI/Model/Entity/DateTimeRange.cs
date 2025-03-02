@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
-namespace CalendarServer.Model.Entity;
+namespace CalendarAPI.Model.Entity;
 
 [Owned]
 public class DateTimeRange {

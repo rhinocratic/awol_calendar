@@ -1,4 +1,4 @@
-namespace CalendarServer.Model;
+namespace CalendarAPI.Model;
 
 public class GetEventsRequest
 {

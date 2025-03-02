@@ -1,4 +1,4 @@
-﻿namespace CalendarTests;
+﻿namespace CalendarAPIUnitTests;
 
 public class UnitTest1
 {
