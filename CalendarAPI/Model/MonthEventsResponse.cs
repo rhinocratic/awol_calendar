@@ -1,9 +1,9 @@
-using CalendarAPI.Model.Entity;
+using CalendarAPI.Model;
 
 namespace CalendarAPI.Model;
 
 public class MonthEventsResponse
 {
-    public required IEnumerable<Event> Events { get; set; }
+    public required IEnumerable<DayEvents> Events { get; set; }
 }
 

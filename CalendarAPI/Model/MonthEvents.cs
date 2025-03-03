@@ -13,10 +13,11 @@ public class MonthEvents
         YearName = date.Year.ToString();
         MonthName = CultureInfo.CurrentCulture.DateTimeFormat.GetAbbreviatedMonthName(date.Month);
         DayNames = AbbreviatedDayNames(weekStartDay);
-        var firstDayOfView = date.FirstOfMonth().StartOfWeek(weekStartDay).DayNumber;
-        var lastDayOfView = date.LastOfMonth().EndOfWeek(weekStartDay).DayNumber;
-        DayEvents = Enumerable.Range(firstDayOfView, lastDayOfView)
-            .Select(x => new Model.DayEvents())
+        var firstDayOfView = date.FirstOfMonth().StartOfWeek(weekStartDay);
+        var lastDayOfView = date.LastOfMonth().EndOfWeek(weekStartDay);
+        var events = calendarService.EventsForDateRange(firstDayOfView, lastDayOfView);
+        Days = Enumerable.Range(firstDayOfView.DayNumber, lastDayOfView.DayNumber)
+            .Select(x => new DayEvents(events, DateOnly.FromDayNumber(x)))
     }
 
     private static IEnumerable<string> AbbreviatedDayNames(DayOfWeek weekStartDay)
