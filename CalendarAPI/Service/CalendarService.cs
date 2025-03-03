@@ -1,10 +1,11 @@
+using CalendarAPI.Model;
 using CalendarAPI.Model.Entity;
 
 namespace CalendarAPI.Service;
 
 public class CalendarService : ICalendarService
 {
-    public IEnumerable<Event> MonthEvents(DateOnly date)
+    public IEnumerable<DayEvents> EventsForDateRange(DateOnly startDate, DateOnly endDate)
     {
         throw new NotImplementedException();
     }
