@@ -1,21 +1,7 @@
-using System.Globalization;
-
 namespace CalendarAPI.Model;
 
-public static class DateExtensions
+public static class DateOnlyExtensions
 {
-
-    public static DateOnly FirstOfMonth(this DateOnly date)
-    {
-        return date.AddDays(1 - date.Day);
-    }
-
-    public static DateOnly LastOfMonth(this DateOnly date)
-    {
-        var daysInMonth = DateTime.DaysInMonth(date.Year, date.Month);
-        return date.AddDays(daysInMonth - date.Day);
-    }
-
     public static DateOnly StartOfWeek(this DateOnly date, DayOfWeek weekStartDay = DayOfWeek.Monday)
     {
         var offset = -((date.DayOfWeek - weekStartDay + 7) % 7);

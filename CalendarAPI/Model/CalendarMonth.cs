@@ -1,23 +1,20 @@
 using System.Globalization;
-using System.Linq;
 using CalendarAPI.Service;
-using Microsoft.AspNetCore.Mvc.TagHelpers.Cache;
-using Microsoft.VisualBasic;
 
 namespace CalendarAPI.Model;
 
-public class MonthEvents
+public class CalendarMonth
 {
-    public MonthEvents(ICalendarService calendarService, DateOnly date, DayOfWeek weekStartDay = DayOfWeek.Monday)
+    public CalendarMonth(ICalendarService calendarService, int year, int month, DayOfWeek weekStartDay = DayOfWeek.Monday)
     {
-        YearName = date.Year.ToString();
-        MonthName = CultureInfo.CurrentCulture.DateTimeFormat.GetAbbreviatedMonthName(date.Month);
+        YearName = year.ToString();
+        MonthName = CultureInfo.CurrentCulture.DateTimeFormat.GetAbbreviatedMonthName(month);
         DayNames = AbbreviatedDayNames(weekStartDay);
-        var firstDayOfView = date.FirstOfMonth().StartOfWeek(weekStartDay);
-        var lastDayOfView = date.LastOfMonth().EndOfWeek(weekStartDay);
+        var firstDayOfView = new DateOnly(year, month, 1).StartOfWeek(weekStartDay);
+        var lastDayOfView = new DateOnly(year, month, DateTime.DaysInMonth(year, month)).EndOfWeek(weekStartDay);
         var events = calendarService.EventsForDateRange(firstDayOfView, lastDayOfView);
         Days = Enumerable.Range(firstDayOfView.DayNumber, lastDayOfView.DayNumber)
-            .Select(x => new DayEvents(events, DateOnly.FromDayNumber(x)))
+            .Select(x => new CalendarDay(events, DateOnly.FromDayNumber(x), month));
     }
 
     private static IEnumerable<string> AbbreviatedDayNames(DayOfWeek weekStartDay)
@@ -31,5 +28,5 @@ public class MonthEvents
     public string YearName { get; set; }
     public string MonthName { get; set; }
     public IEnumerable<string> DayNames { get; set; }
-    public IEnumerable<DayEvents> Days { get; set; }
+    public IEnumerable<CalendarDay> Days { get; set; }
 }
