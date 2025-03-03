@@ -4,22 +4,17 @@ namespace CalendarAPI.Service;
 
 public class CalendarService : ICalendarService
 {
+    public IEnumerable<Event> MonthEvents(DateOnly date)
+    {
+        throw new NotImplementedException();
+    }
+
     public Event DeleteEvent(Guid eventID)
     {
         throw new NotImplementedException();
     }
 
     public Event GetEvent(Guid eventID)
-    {
-        throw new NotImplementedException();
-    }
-
-    public IEnumerable<Event> ListEventsForDay(int year, int month, int day)
-    {
-        throw new NotImplementedException();
-    }
-
-    public IEnumerable<Event> ListEventsForMonth(int year, int month)
     {
         throw new NotImplementedException();
     }
