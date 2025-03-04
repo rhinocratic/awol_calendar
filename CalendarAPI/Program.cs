@@ -1,9 +1,11 @@
 using CalendarAPI.DB;
 using CalendarAPI.Model.Entity;
+using CalendarAPI.Service;
 using FastEndpoints;
 using FastEndpoints.Swagger;
 using Microsoft.AspNetCore.Authorization.Infrastructure;
 using Microsoft.Data.Sqlite;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.VisualBasic;
 using Scalar.AspNetCore;
 
@@ -37,7 +39,9 @@ foreach (var evt in dbContext.Events)
 var bld = WebApplication.CreateBuilder();
 bld.Services
     .AddFastEndpoints()
-    .SwaggerDocument();
+    .SwaggerDocument()
+    .AddDbContext<CalendarContext>()
+    .AddScoped<ICalendarService, CalendarService>();
 
 var app = bld.Build();
 app.UseFastEndpoints();

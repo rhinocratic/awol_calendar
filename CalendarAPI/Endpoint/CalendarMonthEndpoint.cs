@@ -1,10 +1,13 @@
 using FastEndpoints;
 using CalendarAPI.Model;
+using CalendarAPI.Service;
 
 namespace CalendarAPI.Endpoint;
 
-public class CalendarMonthEndpoint : Endpoint<CalendarMonthRequest, CalendarMonthResponse>
+public class CalendarMonthEndpoint(ICalendarService calendarService) : Endpoint<CalendarMonthRequest, CalendarMonthResponse>
 {
+    private readonly ICalendarService _calendarService = calendarService;
+
     public override void Configure()
     {
         Get("/api/events/{Year}/{Month}");
@@ -13,6 +16,7 @@ public class CalendarMonthEndpoint : Endpoint<CalendarMonthRequest, CalendarMont
 
     public override async Task HandleAsync(CalendarMonthRequest req, CancellationToken ct)
     {
-        await SendAsync(new CalendarMonthResponse { Month = new CalendarMonth(req.Year, req.Month) }, cancellation: ct);
+        var response = new CalendarMonthResponse { Month = new CalendarMonth(_calendarService, req.Year, req.Month) };
+        await SendAsync(response, cancellation: ct);
     }
 }

@@ -1,12 +1,15 @@
+using CalendarAPI.DB;
 using CalendarAPI.Model.Entity;
 
 namespace CalendarAPI.Service;
 
-public class CalendarService : ICalendarService
+public class CalendarService(CalendarContext calendarContext) : ICalendarService
 {
+    private readonly CalendarContext _dbContext = calendarContext;
+
     public IEnumerable<Event> EventsForDateRange(DateOnly startDate, DateOnly endDate)
     {
-        throw new NotImplementedException();
+        return _dbContext.Events;
     }
 
     public Event DeleteEvent(Guid eventID)
