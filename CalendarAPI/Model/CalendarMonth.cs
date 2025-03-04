@@ -3,9 +3,9 @@ using CalendarAPI.Service;
 
 namespace CalendarAPI.Model;
 
-public class CalendarMonthResponse
+public class CalendarMonth
 {
-    public CalendarMonthResponse(ICalendarService calendarService, int year, int month, DayOfWeek weekStartDay = DayOfWeek.Monday)
+    public CalendarMonth(ICalendarService calendarService, int year, int month, DayOfWeek weekStartDay = DayOfWeek.Monday)
     {
         YearName = year.ToString();
         MonthName = CultureInfo.CurrentCulture.DateTimeFormat.GetAbbreviatedMonthName(month);

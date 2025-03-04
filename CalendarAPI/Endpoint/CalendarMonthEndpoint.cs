@@ -4,7 +4,7 @@ using CalendarAPI.Service;
 
 namespace CalendarAPI.Endpoint;
 
-public class CalendarMonthEndpoint(ICalendarService calendarService) : Endpoint<CalendarMonthRequest, CalendarMonthResponse>
+public class CalendarMonthEndpoint(ICalendarService calendarService) : Endpoint<CalendarMonthRequest, CalendarMonth>
 {
     private readonly ICalendarService _calendarService = calendarService;
 
@@ -16,7 +16,7 @@ public class CalendarMonthEndpoint(ICalendarService calendarService) : Endpoint<
 
     public override async Task HandleAsync(CalendarMonthRequest req, CancellationToken ct)
     {
-        var response = new CalendarMonthResponse { Month = new CalendarMonth(_calendarService, req.Year, req.Month) };
-        await SendAsync(response, cancellation: ct);
+        var month = new CalendarMonth(_calendarService, req.Year, req.Month);
+        await SendAsync(month, cancellation: ct);
     }
 }
