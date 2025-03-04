@@ -1,6 +1,7 @@
 using FastEndpoints;
 using CalendarAPI.Model;
 using CalendarAPI.Service;
+using CalendarAPI.Model.Request;
 
 namespace CalendarAPI.Endpoint;
 
@@ -16,7 +17,7 @@ public class CalendarMonthEndpoint(ICalendarService calendarService) : Endpoint<
 
     public override async Task HandleAsync(CalendarMonthRequest req, CancellationToken ct)
     {
-        var month = new CalendarMonth(_calendarService, req.Year, req.Month);
+        var month = await CalendarMonth.BuildCalendarMonth(_calendarService, req.Year, req.Month);
         await SendAsync(month, cancellation: ct);
     }
 }

@@ -1,7 +1,7 @@
 using FastEndpoints;
 using FluentValidation;
 
-namespace CalendarAPI.Model;
+namespace CalendarAPI.Model.Request;
 
 public class CalendarMonthRequest
 {
