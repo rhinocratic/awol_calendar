@@ -1,22 +1,24 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Month } from './month';
+import { Month } from '../../app-model';
 import { CalendarService } from '../../calendar.service';
+import { DayComponent } from './day/day.component';
 
 @Component({
   selector: 'app-month',
-  imports: [CommonModule],
-  templateUrl: './month.component.html',
+  imports: [CommonModule, DayComponent],
+  template: `
+    <section class= "day" >
+      <app-day *ngFor="let day of month?.days" [day]="day">
+      </app-day>
+    </section>
+  `,
+  // templateUrl: './month.component.html',
   styleUrl: './month.component.scss'
 })
 
 export class MonthComponent {
 
-  month: Month = {};
-  calendarService: CalendarService = inject(CalendarService);
-
-  constructor() {
-    this.month = this.calendarService.getMonth();
-  }
+  @Input() month!: Month | undefined;
 
 }
