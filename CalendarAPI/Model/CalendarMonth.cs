@@ -1,5 +1,4 @@
 using System.Globalization;
-using CalendarAPI.Model.Entity;
 using CalendarAPI.Service;
 
 namespace CalendarAPI.Model;

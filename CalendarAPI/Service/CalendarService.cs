@@ -18,23 +18,32 @@ public class CalendarService(CalendarContext calendarContext) : ICalendarService
             .ToListAsync();
     }
 
-    public Event DeleteEvent(Guid eventID)
+    public async Task<bool> DeleteEvent(Guid eventID)
     {
-        throw new NotImplementedException();
+        var evt = await _dbContext.Events.FindAsync(eventID);
+        if (evt is null)
+        {
+            return false;
+        }
+        var entityEntry = _dbContext.Remove(evt);
+        return await _dbContext.SaveChangesAsync() == 1;
     }
 
-    public Event GetEvent(Guid eventID)
+    public async Task<Event?> GetEvent(Guid eventID)
     {
-        throw new NotImplementedException();
+        return await _dbContext.Events.FindAsync(eventID);
     }
 
-    public Event CreateEvent(Event evt)
+    public async Task<Event> CreateEvent(Event evt)
     {
-        throw new NotImplementedException();
+        _dbContext.Events.Add(evt);
+        await _dbContext.SaveChangesAsync();
+        return evt;
     }
 
-    public Event UpdateEvent(Event modified)
+    public async Task<bool> UpdateEvent(Event evt)
     {
-        throw new NotImplementedException();
+        var updated = _dbContext.Events.Update(evt);
+        return await _dbContext.SaveChangesAsync() == 1;
     }
 }

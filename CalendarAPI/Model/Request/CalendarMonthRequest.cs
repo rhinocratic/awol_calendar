@@ -5,8 +5,8 @@ namespace CalendarAPI.Model.Request;
 
 public class CalendarMonthRequest
 {
-    public int Year { get; set; }
-    public int Month { get; set; }
+    public required int Year { get; set; }
+    public required int Month { get; set; }
 
     internal sealed class Validator : Validator<CalendarMonthRequest>
     {

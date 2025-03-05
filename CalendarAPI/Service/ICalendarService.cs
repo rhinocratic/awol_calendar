@@ -5,8 +5,8 @@ namespace CalendarAPI.Service;
 public interface ICalendarService
 {
     Task<IEnumerable<Event>> EventsForDateRange(DateOnly startDate, DateOnly endDate);
-    Event CreateEvent(Event evt);
-    Event GetEvent(Guid eventID);
-    Event UpdateEvent(Event modified);
-    Event DeleteEvent(Guid eventID);
+    Task<Event> CreateEvent(Event evt);
+    Task<Event?> GetEvent(Guid eventID);
+    Task<bool> UpdateEvent(Event modified);
+    Task<bool> DeleteEvent(Guid eventID);
 }

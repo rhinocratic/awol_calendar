@@ -22,14 +22,14 @@ public class CalendarContext : DbContext
 
         dbContext.Add(new Event
         {
-            Name = "Event One",
+            Title = "Event One",
             Description = "First Event",
             Interval = new DateTimeRange(DateTime.UtcNow, DateTime.UtcNow.Add(TimeSpan.FromHours(1)))
         });
 
         dbContext.Add(new Event
         {
-            Name = "Event Two",
+            Title = "Event Two",
             Description = "Second Event",
             Interval = new DateTimeRange(DateTime.UtcNow.Add(TimeSpan.FromHours(2)), DateTime.UtcNow.Add(TimeSpan.FromHours(3)))
         });
@@ -38,7 +38,7 @@ public class CalendarContext : DbContext
 
         foreach (var evt in dbContext.Events)
         {
-            Console.WriteLine($"Event {evt.Name} has ID {evt.ID}");
+            Console.WriteLine($"Event {evt.Title} has ID {evt.ID}");
         }
     }
 }

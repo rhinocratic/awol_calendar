@@ -1,10 +1,11 @@
 using FastEndpoints;
 using CalendarAPI.Service;
 using CalendarAPI.Model.Request;
+using CalendarAPI.Model.Entity;
 
 namespace CalendarAPI.Endpoint;
 
-public class CreateEventEndpoint(ICalendarService calendarService) : Endpoint<CreateEventRequest, int>
+public class CreateEventEndpoint(ICalendarService calendarService) : Endpoint<Event>
 {
     private readonly ICalendarService _calendarService = calendarService;
 
@@ -14,10 +15,10 @@ public class CreateEventEndpoint(ICalendarService calendarService) : Endpoint<Cr
         AllowAnonymous();
     }
 
-    public override async Task HandleAsync(CreateEventRequest req, CancellationToken ct)
+    public override async Task HandleAsync(Event req, CancellationToken ct)
     {
-        var month = 42;
-        await SendAsync(month, cancellation: ct);
+        var created = await _calendarService.CreateEvent(req);
+        await SendCreatedAtAsync<GetEventEndpoint>(routeValues: new { id = created.ID }, responseBody: null, cancellation: ct);
     }
 
 }
