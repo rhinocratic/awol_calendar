@@ -3,6 +3,11 @@ export interface Interval {
   end: Date;
 }
 
+export interface EventUpdate {
+  event: Event;
+  type: string;
+}
+
 export interface Event {
   id: string;
   title: string;

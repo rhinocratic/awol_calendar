@@ -10,13 +10,21 @@ keepAliveConnection.Open();
 CalendarContext.Seed();
 
 var bld = WebApplication.CreateBuilder();
-bld.Services
+bld.Services.AddCors(options =>
+        options.AddPolicy(name: "AllowAllOrigins",
+        configurePolicy: policy =>
+        {
+            policy.AllowAnyOrigin()
+                .AllowAnyHeader()
+                .AllowAnyMethod();
+        }))
     .AddFastEndpoints()
     .SwaggerDocument()
     .AddDbContext<CalendarContext>()
     .AddScoped<ICalendarService, CalendarService>();
 
 var app = bld.Build();
+app.UseCors("AllowAllOrigins");
 app.UseFastEndpoints();
 
 if (app.Environment.IsDevelopment())

@@ -5,7 +5,7 @@ using CalendarAPI.Model.Request;
 
 namespace CalendarAPI.Endpoint;
 
-public class UpdateEventEndpoint(ICalendarService calendarService) : Endpoint<UpdateEventRequest, bool>
+public class UpdateEventEndpoint(ICalendarService calendarService) : Endpoint<UpdateEventRequest, Event>
 {
     private readonly ICalendarService _calendarService = calendarService;
 
@@ -18,7 +18,7 @@ public class UpdateEventEndpoint(ICalendarService calendarService) : Endpoint<Up
 
     public override async Task HandleAsync(UpdateEventRequest req, CancellationToken ct)
     {
-        var updated = await _calendarService.UpdateEvent(req.Event);
+        var updated = await _calendarService.CreateOrUpdateEvent(req.Event);
         await SendAsync(updated, cancellation: ct);
     }
 }

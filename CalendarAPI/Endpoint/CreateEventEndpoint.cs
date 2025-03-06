@@ -18,8 +18,8 @@ public class CreateEventEndpoint(ICalendarService calendarService) : Endpoint<Ev
 
     public override async Task HandleAsync(Event req, CancellationToken ct)
     {
-        var created = await _calendarService.CreateEvent(req);
-        await SendCreatedAtAsync<GetEventEndpoint>(routeValues: new { id = created.ID }, responseBody: null, cancellation: ct);
+        var created = await _calendarService.CreateOrUpdateEvent(req);
+        await SendCreatedAtAsync<GetEventEndpoint>(routeValues: new { id = created.ID }, responseBody: created, cancellation: ct);
     }
 
 }
