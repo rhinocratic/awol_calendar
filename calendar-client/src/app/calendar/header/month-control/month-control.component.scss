@@ -2,7 +2,9 @@
   display: flex;
   justify-content: space-between;
 
-  &.month-name {
-    font: var(--mat-sys-headline-large);
+  .month-name {
+    font: var(--mat-sys-display-medium);
   }
 }
+
+

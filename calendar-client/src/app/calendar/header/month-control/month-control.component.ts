@@ -13,4 +13,12 @@ export class MonthControlComponent {
 
   @Input() month!: Month | undefined;
 
+  decrementMonth(): void {
+    console.log("Decrement month");
+  }
+
+  incrementMonth(): void {
+    console.log("Increment month");
+  }
+
 }

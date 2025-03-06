@@ -2,9 +2,10 @@ mat-grid-tile {
   background: silver;
   border: 1px solid var(--mat-sys-outline-variant);
   border-radius: 0.5em;
-  box-shadow: var(--mat-sys-level2);
+  font: var(--mat-sys-display-small);
 
   &.enabled {
-    background: var(--mat-sys-surface);;
+    background: var(--mat-sys-surface);
+    box-shadow: var(--mat-sys-level2);
   }
 }

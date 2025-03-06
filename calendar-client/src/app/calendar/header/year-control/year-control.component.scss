@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
 
-  &.year-name {
-    font: var(--mat-sys-display-large);
+  .year-name {
+    font: var(--mat-sys-display-medium);
   }
 }

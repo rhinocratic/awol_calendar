@@ -1,12 +1,12 @@
 <section>
   <div class="month-controls">
-    <button mat-icon-button>
+    <button mat-icon-button (click)="decrementMonth()">
       <mat-icon>arrow_left</mat-icon>
     </button>
-    <h2 class="month-name">
+    <div class="month-name">
       {{month?.monthName}}
-    </h2>
-    <button mat-icon-button>
+    </div>
+    <button mat-icon-button (click)="incrementMonth()">
       <mat-icon>arrow_right</mat-icon>
     </button>
   </div>

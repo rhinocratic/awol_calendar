@@ -14,4 +14,12 @@ export class YearControlComponent {
 
   @Input() month!: Month | undefined;
 
+  decrementYear(): void {
+    console.log("Decrement");
+  }
+
+  incrementYear(): void {
+    console.log("Increment");
+  }
+
 }

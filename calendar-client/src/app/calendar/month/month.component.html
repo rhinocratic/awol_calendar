@@ -1,6 +1,6 @@
-<mat-grid-list cols="7" gutterSize="0.5em">
-  <mat-grid-tile *ngFor="let day of month?.days" [class.enabled]="day.enabled">
-    <app-day [day]="day">
+<mat-grid-list *ngIf="month" cols="7" gutterSize="0.5em">
+  <mat-grid-tile *ngFor="let day of month.days" [class.enabled]="day.enabled" (click)="showDayDetail(day)">
+    <app-day [day]="day" matBadge="{{day.events.length}}" [matBadgeHidden]="hasNoEvents(day)" matBadgePosition="before">
       {{day}}
     </app-day>
   </mat-grid-tile>
