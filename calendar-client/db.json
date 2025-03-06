@@ -1,0 +1,248 @@
+{
+  "month": {
+    "yearName": "2025",
+    "monthName": "Mar",
+    "dayNames": [
+      "Mon",
+      "Tue",
+      "Wed",
+      "Thu",
+      "Fri",
+      "Sat",
+      "Sun"
+    ],
+    "days": [
+      {
+        "dayOfMonth": 24,
+        "enabled": false,
+        "events": []
+      },
+      {
+        "dayOfMonth": 25,
+        "enabled": false,
+        "events": []
+      },
+      {
+        "dayOfMonth": 26,
+        "enabled": false,
+        "events": []
+      },
+      {
+        "dayOfMonth": 27,
+        "enabled": false,
+        "events": []
+      },
+      {
+        "dayOfMonth": 28,
+        "enabled": false,
+        "events": []
+      },
+      {
+        "dayOfMonth": 1,
+        "enabled": true,
+        "events": []
+      },
+      {
+        "dayOfMonth": 2,
+        "enabled": true,
+        "events": []
+      },
+      {
+        "dayOfMonth": 3,
+        "enabled": true,
+        "events": []
+      },
+      {
+        "dayOfMonth": 4,
+        "enabled": true,
+        "events": []
+      },
+      {
+        "dayOfMonth": 5,
+        "enabled": true,
+        "events": [
+          {
+            "id": "332d35a3-1394-42fc-aa63-b240ed7f1eb7",
+            "title": "Event One",
+            "interval": {
+              "start": "2025-03-05T16:52:13.6327856",
+              "end": "2025-03-05T17:52:13.6327856"
+            },
+            "description": "First Event",
+            "location": null
+          },
+          {
+            "id": "9f9e753b-81fc-4696-975b-a4c4bccdd8c3",
+            "title": "Event Two",
+            "interval": {
+              "start": "2025-03-05T18:52:13.7141535",
+              "end": "2025-03-05T19:52:13.7141559"
+            },
+            "description": "Second Event",
+            "location": null
+          }
+        ]
+      },
+      {
+        "dayOfMonth": 6,
+        "enabled": true,
+        "events": []
+      },
+      {
+        "dayOfMonth": 7,
+        "enabled": true,
+        "events": []
+      },
+      {
+        "dayOfMonth": 8,
+        "enabled": true,
+        "events": []
+      },
+      {
+        "dayOfMonth": 9,
+        "enabled": true,
+        "events": []
+      },
+      {
+        "dayOfMonth": 10,
+        "enabled": true,
+        "events": []
+      },
+      {
+        "dayOfMonth": 11,
+        "enabled": true,
+        "events": []
+      },
+      {
+        "dayOfMonth": 12,
+        "enabled": true,
+        "events": []
+      },
+      {
+        "dayOfMonth": 13,
+        "enabled": true,
+        "events": []
+      },
+      {
+        "dayOfMonth": 14,
+        "enabled": true,
+        "events": []
+      },
+      {
+        "dayOfMonth": 15,
+        "enabled": true,
+        "events": []
+      },
+      {
+        "dayOfMonth": 16,
+        "enabled": true,
+        "events": []
+      },
+      {
+        "dayOfMonth": 17,
+        "enabled": true,
+        "events": []
+      },
+      {
+        "dayOfMonth": 18,
+        "enabled": true,
+        "events": []
+      },
+      {
+        "dayOfMonth": 19,
+        "enabled": true,
+        "events": []
+      },
+      {
+        "dayOfMonth": 20,
+        "enabled": true,
+        "events": []
+      },
+      {
+        "dayOfMonth": 21,
+        "enabled": true,
+        "events": []
+      },
+      {
+        "dayOfMonth": 22,
+        "enabled": true,
+        "events": []
+      },
+      {
+        "dayOfMonth": 23,
+        "enabled": true,
+        "events": []
+      },
+      {
+        "dayOfMonth": 24,
+        "enabled": true,
+        "events": []
+      },
+      {
+        "dayOfMonth": 25,
+        "enabled": true,
+        "events": []
+      },
+      {
+        "dayOfMonth": 26,
+        "enabled": true,
+        "events": []
+      },
+      {
+        "dayOfMonth": 27,
+        "enabled": true,
+        "events": []
+      },
+      {
+        "dayOfMonth": 28,
+        "enabled": true,
+        "events": []
+      },
+      {
+        "dayOfMonth": 29,
+        "enabled": true,
+        "events": []
+      },
+      {
+        "dayOfMonth": 30,
+        "enabled": true,
+        "events": []
+      },
+      {
+        "dayOfMonth": 31,
+        "enabled": true,
+        "events": []
+      },
+      {
+        "dayOfMonth": 1,
+        "enabled": false,
+        "events": []
+      },
+      {
+        "dayOfMonth": 2,
+        "enabled": false,
+        "events": []
+      },
+      {
+        "dayOfMonth": 3,
+        "enabled": false,
+        "events": []
+      },
+      {
+        "dayOfMonth": 4,
+        "enabled": false,
+        "events": []
+      },
+      {
+        "dayOfMonth": 5,
+        "enabled": false,
+        "events": []
+      },
+      {
+        "dayOfMonth": 6,
+        "enabled": false,
+        "events": []
+      }
+    ]
+  }
+}

@@ -1,0 +1,10 @@
+.month-controls {
+  display: flex;
+  justify-content: space-between;
+
+  .month-name {
+    font: var(--mat-sys-display-medium);
+  }
+}
+
+

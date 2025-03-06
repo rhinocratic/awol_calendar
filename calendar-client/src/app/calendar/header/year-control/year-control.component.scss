@@ -1,0 +1,8 @@
+.year-controls {
+  display: flex;
+  justify-content: space-between;
+
+  .year-name {
+    font: var(--mat-sys-display-medium);
+  }
+}

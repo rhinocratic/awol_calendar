@@ -1,0 +1,13 @@
+<section>
+  <div class="year-controls">
+    <button mat-icon-button (click)="decrementYear()">
+      <mat-icon>arrow_left</mat-icon>
+    </button>
+    <div class="year-name">
+      {{month?.yearName}}
+    </div>
+    <button mat-icon-button (click)="incrementYear()">
+      <mat-icon>arrow_right</mat-icon>
+    </button>
+  </div>
+</section>
