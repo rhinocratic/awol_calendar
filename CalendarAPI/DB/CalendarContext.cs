@@ -23,14 +23,14 @@ public class CalendarContext : DbContext
         dbContext.Add(new Event
         {
             Title = "Event One",
-            Description = "First Event",
+            Location = "Meeting Room 1",
             Interval = new DateTimeRange(DateTime.UtcNow, DateTime.UtcNow.Add(TimeSpan.FromHours(1)))
         });
 
         dbContext.Add(new Event
         {
             Title = "Event Two",
-            Description = "Second Event",
+            Location = "Meeting Room 2",
             Interval = new DateTimeRange(DateTime.UtcNow.Add(TimeSpan.FromHours(2)), DateTime.UtcNow.Add(TimeSpan.FromHours(3)))
         });
 

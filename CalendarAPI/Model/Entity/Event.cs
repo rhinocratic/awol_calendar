@@ -9,7 +9,6 @@ public class Event
     public Guid ID { get; set; }
     public required string Title { get; set; }
     public required DateTimeRange Interval { get; set; }
-    public string? Description { get; set; }
     public string? Location { get; set; }
 
     public Event TruncateIntervalTo(DateTimeRange range)
@@ -21,7 +20,6 @@ public class Event
             ID = this.ID,
             Title = this.Title,
             Interval = new DateTimeRange(start, end),
-            Description = this.Description,
             Location = this.Location
         };
     }

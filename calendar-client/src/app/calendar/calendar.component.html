@@ -1,7 +1,7 @@
-<mat-card appearance="outlined">
+<mat-card appearance="outlined" *ngIf="month">
   <app-header [month]="month"></app-header>
 </mat-card>
-<mat-card appearance="outlined">
+<mat-card appearance="outlined" *ngIf="month">
   <mat-card-content>
     <app-month [month]="month"></app-month>
   </mat-card-content>
