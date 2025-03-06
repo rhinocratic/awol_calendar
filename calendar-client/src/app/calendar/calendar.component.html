@@ -1,7 +1,8 @@
-<p>calendar works!</p>
-<section class="calendar-header">
-  <app-header></app-header>
-</section>
-<section class="calendar-body">
-  <app-month [month]="month"></app-month>
-</section>
+<mat-card appearance="outlined">
+  <app-header [month]="month"></app-header>
+</mat-card>
+<mat-card appearance="outlined">
+  <mat-card-content>
+    <app-month [month]="month"></app-month>
+  </mat-card-content>
+</mat-card>

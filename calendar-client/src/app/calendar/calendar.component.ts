@@ -4,10 +4,11 @@ import { HeaderComponent } from './header/header.component';
 import { MonthComponent } from './month/month.component';
 import { CalendarService } from '../calendar.service';
 import { Month } from '../app-model';
+import { MatCardModule } from '@angular/material/card';
 
 @Component({
   selector: 'app-calendar',
-  imports: [CommonModule, HeaderComponent, MonthComponent],
+  imports: [CommonModule, HeaderComponent, MonthComponent, MatCardModule],
   templateUrl: './calendar.component.html',
   styleUrl: './calendar.component.scss'
 })

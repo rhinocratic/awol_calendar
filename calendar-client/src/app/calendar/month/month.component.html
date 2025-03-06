@@ -1,5 +1,7 @@
-<p>month works!</p>
-<section class="month">
-  <!-- <app-day *ng-for="let days of month" [day]="day">
-  </app-day> -->
-</section>
+<mat-grid-list cols="7" gutterSize="0.5em">
+  <mat-grid-tile *ngFor="let day of month?.days" [class.enabled]="day.enabled">
+    <app-day [day]="day">
+      {{day}}
+    </app-day>
+  </mat-grid-tile>
+</mat-grid-list>

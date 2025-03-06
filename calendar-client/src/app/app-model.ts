@@ -20,6 +20,6 @@ export interface Day {
 export interface Month {
   yearName: string;
   monthName: string;
-  dayNames: string;
+  dayNames: string[];
   days: [Day];
 }

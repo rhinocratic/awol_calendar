@@ -3,17 +3,12 @@ import { CommonModule } from '@angular/common';
 import { Month } from '../../app-model';
 import { CalendarService } from '../../calendar.service';
 import { DayComponent } from './day/day.component';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 @Component({
   selector: 'app-month',
-  imports: [CommonModule, DayComponent],
-  template: `
-    <section class= "day" >
-      <app-day *ngFor="let day of month?.days" [day]="day">
-      </app-day>
-    </section>
-  `,
-  // templateUrl: './month.component.html',
+  imports: [CommonModule, DayComponent, MatGridListModule],
+  templateUrl: './month.component.html',
   styleUrl: './month.component.scss'
 })
 
