@@ -13,6 +13,7 @@ public class CalendarMonthEndpoint(ICalendarService calendarService) : Endpoint<
     {
         Get("/api/events/{Year}/{Month}");
         AllowAnonymous();
+        Options(b => b.RequireCors(x => x.AllowAnyOrigin()));
     }
 
     public override async Task HandleAsync(CalendarMonthRequest req, CancellationToken ct)

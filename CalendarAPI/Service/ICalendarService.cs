@@ -9,4 +9,5 @@ public interface ICalendarService
     Task<Event?> GetEvent(Guid eventID);
     Task<bool> UpdateEvent(Event modified);
     Task<bool> DeleteEvent(Guid eventID);
+    public event EventHandler? EventUpdated;
 }

@@ -14,6 +14,7 @@ public class DeleteEventEndpoint(ICalendarService calendarService) : Endpoint<De
     {
         Delete("/api/events/{id}");
         AllowAnonymous();
+        Options(b => b.RequireCors(x => x.AllowAnyOrigin()));
     }
 
     public override async Task HandleAsync(DeleteEventRequest req, CancellationToken ct)

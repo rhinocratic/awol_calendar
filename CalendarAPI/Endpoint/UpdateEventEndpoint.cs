@@ -13,6 +13,7 @@ public class UpdateEventEndpoint(ICalendarService calendarService) : Endpoint<Up
     {
         Put("/api/events/{id}");
         AllowAnonymous();
+        Options(b => b.RequireCors(x => x.AllowAnyOrigin()));
     }
 
     public override async Task HandleAsync(UpdateEventRequest req, CancellationToken ct)

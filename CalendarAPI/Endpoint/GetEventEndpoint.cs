@@ -13,11 +13,16 @@ public class GetEventEndpoint(ICalendarService calendarService) : Endpoint<GetEv
     {
         Get("/api/events/{id}");
         AllowAnonymous();
+        Options(b => b.RequireCors(x => x.AllowAnyOrigin()));
     }
 
     public override async Task HandleAsync(GetEventRequest req, CancellationToken ct)
     {
         var evt = await _calendarService.GetEvent(req.ID);
-        await SendAsync(evt, cancellation: ct);
+        if (evt is not null)
+        {
+            await SendAsync(evt, cancellation: ct);
+        }
+        await SendNotFoundAsync(ct);
     }
 }

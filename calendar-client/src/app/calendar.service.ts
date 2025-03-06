@@ -7,7 +7,7 @@ import { Month } from './app-model';
 
 export class CalendarService {
 
-  url = 'http://localhost:3000/month';
+  url = 'http://localhost:5244/api/events/2025/3';
 
   async getMonth(year: number, month: number): Promise<Month> {
     const data = await fetch(this.url);
