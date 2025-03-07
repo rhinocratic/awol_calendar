@@ -10,7 +10,7 @@ From the `CalendarAPI` folder, run:
 ```bash
 dotnet run
 ```
-This will open a browser window with a [Scalar](https://scalar.com/) UI, from where the API can be invoked.
+There is a [Scalar](https://scalar.com/) UI for the API at [http://localhost:5244/scalar/v1#tag/api](http://localhost:5244/scalar/v1#tag/api), from where the API can be invoked.
 
 ## Building and running the front end
 
